@@ -20,15 +20,6 @@ p {
     text-shadow: 0 0 20px #8e44ad, 0 0 20px rgba(142, 68, 173, 0);
 }
 
-/* @keyframes blink {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-} */
-
 .error-message {
     font-family: "Roboto", sans-serif;
     text-align: center;
@@ -38,7 +29,6 @@ p {
     transform: translate(-50%, -50%);
     color: #8e44ad;
     text-shadow: 0 0 20px #8e44ad, 0 0 20px rgba(142, 68, 173, 0);
-    /* animation: blink 1s infinite alternate; */
 }
 
 #time, #date, .title, .description {
@@ -65,7 +55,13 @@ p {
 
 .description {
     letter-spacing: 0.1em;
+    font-size: 33px;
+}
+
+.redirect-message {
+    letter-spacing: 0.1em;
     font-size: 36px;
+    color: #3498db;
 }
 
 #footer {
