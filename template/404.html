@@ -2,6 +2,15 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+
+        <title>API TIME</title>
+
+        <meta property="og:title" content="API TIME">
+        <meta property="og:url" content="https://apitime.xyz">
+        <meta property="og:description" content="한국 시간을 실시간으로 표시, API 기능을 지원하는 사이트">
+
+        <link href="https://cdn.discordapp.com/attachments/1145647801267650580/1153324561966845952/505b59fb67bd9d6604bd4f15bd22d1e1.png" rel="icon">
+
         <link rel="stylesheet" href="/style.css">
     </head>
     <body>
@@ -21,7 +30,9 @@
         </footer>
 
     </body>
+
     <script>
+
         setTimeout(function() {
             window.location.href = "/";
         }, 3000);
@@ -31,6 +42,7 @@
             count--;
             document.getElementById('redirect-message').innerText = `${count}초뒤 자동으로 메인 화면으로 이동합니다.`;
         }, 1000);
+
     </script>
 
 </html>
