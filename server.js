@@ -1,4 +1,5 @@
 const express = require('express');
+const pathModule = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -8,9 +9,9 @@ function timeindex(num, digit) {
     return String(num).padStart(digit, '0');
 }
 
-app.post('/', (req, res) => {
-    const path = path.join(__dirname, 'template', 'index.html');
-    res.sendFile(path);
+app.get('/', (req, res) => {
+    const filePath = pathModule.join(__dirname, 'public', 'index.html');
+    res.sendFile(filePath);
 });
 
 app.get('/current-time', (req, res) => {
