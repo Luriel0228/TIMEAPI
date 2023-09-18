@@ -9,8 +9,8 @@ function timeindex(num, digit) {
 }
 
 app.post('/', (req, res) => {
-    const path = 'index.html'
-    res.sendFile(path)
+    const path = path.join(__dirname, 'template', 'index.html');
+    res.sendFile(path);
 });
 
 app.get('/current-time', (req, res) => {
