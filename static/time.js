@@ -1,5 +1,9 @@
 const WEEK = ["일", "월" ,"화", "수", "목", "금", "토"];
 
+function timeindex(num, digit) {
+    return String(num).padStart(digit, '0');
+}
+
 function updateTime() {
     var now = new Date();
 
@@ -17,7 +21,3 @@ function updateTime() {
 
 updateTime();
 setInterval(updateTime, 1000);
-
-function timeindex(num, digit) {
-    return String(num).padStart(digit, '0');
-}

@@ -9,10 +9,10 @@ function timeindex(num, digit) {
     return String(num).padStart(digit, '0');
 }
 
-app.use(express.static('public'));
+app.use(express.static('static'));
 
 app.get('/', (req, res) => {
-    const filePath = pathModule.join(__dirname, 'public', 'index.html');
+    const filePath = pathModule.join(__dirname, 'template', 'index.html');
     res.sendFile(filePath);
 });
 
@@ -32,6 +32,15 @@ app.get('/api/time', (req, res) => {
     };
 
     res.json({ time, date });
+});
+
+app.use('/api', (req, res, next) => {
+    res.status(404).json({ error: 'API Not Found' });
+});
+
+app.use((req, res, next) => {
+    const filePath = pathModule.join(__dirname, 'template', '404.html');
+    res.status(404).sendFile(filePath);
 });
 
 app.listen(port, () => {
