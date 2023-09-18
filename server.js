@@ -9,12 +9,15 @@ function timeindex(num, digit) {
     return String(num).padStart(digit, '0');
 }
 
+app.use(express.static('public'));
+
+
 app.get('/', (req, res) => {
     const filePath = pathModule.join(__dirname, 'public', 'index.html');
     res.sendFile(filePath);
 });
 
-app.get('/current-time', (req, res) => {
+app.get('/api/time', (req, res) => {
     const now = new Date();
     const time = {
         hours: timeindex(now.getHours(), 2),
