@@ -50,3 +50,26 @@ p {
     text-align: center;
     padding-top: 30px;
 }
+
+@media (max-width: 767px) {
+    html {
+        background-image: url('mobile-background.png');
+        background-size: cover;
+    }
+
+    .clock {
+        font-size: 48px;
+    }
+
+    #time {
+        font-size: 60px;
+    }
+
+    #date {
+        font-size: 18px;
+    }
+
+    #footer {
+        font-size: 12px;
+    }
+}
