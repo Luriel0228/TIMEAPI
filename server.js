@@ -11,7 +11,6 @@ function timeindex(num, digit) {
 
 app.use(express.static('public'));
 
-
 app.get('/', (req, res) => {
     const filePath = pathModule.join(__dirname, 'public', 'index.html');
     res.sendFile(filePath);
