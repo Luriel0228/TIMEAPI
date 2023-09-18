@@ -1,7 +1,7 @@
 const express = require('express');
 const pathModule = require('path');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 80;
 
 const WEEK = ["일", "월", "화", "수", "목", "금", "토"];
 
