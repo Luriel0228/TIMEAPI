@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>API TIME</title>
+
+        <meta property="og:title" content="API TIME">
+        <meta property="og:url" content="https://apitime.xyz">
+        <meta property="og:description" content="한국 시간을 실시간으로 표시, API 기능을 지원하는 사이트">
+
+        <link href="https://cdn.discordapp.com/attachments/1145647801267650580/1153324561966845952/505b59fb67bd9d6604bd4f15bd22d1e1.png" rel="icon">
+
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+
+        <div class="error-message">
+            <p class="title">401 NO ATUTHENTIFICATION</p>
+            <p class="description">해당 페이지의 권한이 없습니다.</p>
+            <p class="description", id="redirect-message">5초뒤 자동으로 메인 화면으로 이동합니다.</p>
+        </div>
+
+        <footer id="footer">
+            <div class="container">
+                <div class="copyright">
+                    © Copyright <strong><a style="color: rgb(0, 0, 0);", href="https://github.com/Luriel0228/">Luriel_</a></strong>. All Rights Reserved
+                </div>
+            </div>
+        </footer>
+
+    </body>
+
+    <script>
+
+        setTimeout(function() {
+            window.location.href = "/";
+        }, 5000);
+
+        let count = 5;
+        setInterval(function() {
+            count--;
+            document.getElementById('redirect-message').innerText = `${count}초뒤 자동으로 메인 화면으로 이동합니다.`;
+        }, 1000);
+
+    </script>
+
+</html>

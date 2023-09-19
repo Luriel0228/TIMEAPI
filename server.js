@@ -16,6 +16,10 @@ app.get('/', (req, res) => {
     res.sendFile(filePath);
 });
 
+app.get('/discord', (req, res) => {
+    res.redirect('https://discord.com')
+});
+
 app.get('/api/time', (req, res) => {
     const now = new Date();
     const time = {
@@ -39,8 +43,10 @@ app.use('/api', (req, res, next) => {
 });
 
 app.use((req, res, next) => {
-    const filePath = pathModule.join(__dirname, 'template', '404.html');
-    res.status(404).sendFile(filePath);
+    const filePath404 = pathModule.join(__dirname, 'template', '404.html');
+    const filePath401 = pathModule.join(__dirname, 'template', '401.html')
+    res.status(404).sendFile(filePath404);
+    res.status(401).sendFile(filePath401);    
 });
 
 app.listen(port, () => {
