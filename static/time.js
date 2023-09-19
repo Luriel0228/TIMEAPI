@@ -4,20 +4,26 @@ function timeindex(num, digit) {
     return String(num).padStart(digit, '0');
 }
 
-function updateTime() {
-    var now = new Date();
+function updateServerTime() {
+    fetch('/api/time')
+        .then(response => response.json())
+        .then(data => {
+            const serverTime = data.time;
+            const serverDate = data.date;
 
-    document.getElementById("time").innerText =
-            timeindex(now.getHours(), 2) + ":" +
-            timeindex(now.getMinutes(), 2) + ":" +
-            timeindex(now.getSeconds(), 2);
+            document.getElementById("time").innerText =
+                serverTime.hours + ":" +
+                serverTime.minutes + ":" +
+                serverTime.seconds;
 
-    document.getElementById("date").innerText =
-            now.getFullYear() + "-" +
-            timeindex(now.getMonth() + 1, 2) + "-" +
-            timeindex(now.getDate(), 2) + " " +
-            WEEK[now.getDay()] + "요일";
+            document.getElementById("date").innerText =
+                serverDate.year + "-" +
+                serverDate.month + "-" +
+                serverDate.day + " " +
+                serverDate.dayOfWeek;
+        })
+        .catch(error => console.error('Error:', error));
 }
 
-updateTime();
-setInterval(updateTime, 1000);
+updateServerTime();
+setInterval(updateServerTime, 1000);

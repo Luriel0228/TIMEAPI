@@ -1,7 +1,7 @@
 const express = require('express');
 const pathModule = require('path');
 const app = express();
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 84;
 
 const WEEK = ["일", "월", "화", "수", "목", "금", "토"];
 
@@ -21,9 +21,10 @@ app.get('/discord', (req, res) => {
 });
 
 app.get('/api/time', (req, res) => {
-    const now = new Date();
+    var now = new Date();
+
     const time = {
-        hours: timeindex(now.getHours(), 2),
+        hours: timeindex(now.getHours(), 2), 
         minutes: timeindex(now.getMinutes(), 2),
         seconds: timeindex(now.getSeconds(), 2)
     };
