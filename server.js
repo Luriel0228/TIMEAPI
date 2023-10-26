@@ -16,10 +16,6 @@ app.get('/', (req, res) => {
     res.sendFile(filePath);
 });
 
-app.get('/discord', (req, res) => {
-    res.redirect('https://discord.com')
-});
-
 app.get('/api/time', (req, res) => {
     var now = new Date();
 
